@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+    <style>
+        *
+        {
+            box-sizing: border-box;
+        }
+        html
+        {
+            margin: 0;
+            padding: 0;
+        }
+
+        body
+        {
+            background-color: #362222;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto", sans-serif;
+            background-image: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);
+        }
+        .product-card
+        {
+            background-color: #fff;
+            padding: 20px;
+            max-width: 600px;
+            border-radius: 20px;
+            margin: auto;
+            width: 100%;
+            box-shadow: 0px 11px 20px -8px rgb(51 51 51 / 28%);
+            
+        }
+        .product-card h2{
+            margin: 0;
+            margin-bottom: 20px;
+        }
+        .searchbox
+        {
+            position: relative;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 7px 10px;
+            margin-bottom: 20px;
+        }
+        .searchbox input{
+            border: none;
+            padding-left: 30px;
+            width: 100%;
+        }
+        .searchbox input:focus{
+            outline: 0;
+        }
+        .searchbox .bx-search
+        {
+            position: absolute;
+            top: 8px;
+        }
+        .products 
+        {
+            height: 500px;
+            overflow-y: auto;
+        }
+        .products::-webkit-scrollbar
+        {
+            display: none;
+        }
+        .products
+        {
+            width: 100%;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .products .card 
+        {
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #c3d1db;
+            margin-bottom: 20px;
+           
+        }
+        .products .card img{
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+        }
+        .products .card .price
+        {
+            font-weight: 600;
+            color: #0d63d4;
+        }
+        
+        #loading {
+            text-align: center;
+            color: #0d63d4;
+            font-weight: 500;
+            padding: 20px 0;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="product-card">
+        <h2>Search Product</h2>
+        <div class="searchbox">
+            <i class='bx bx-search'></i>
+            <input type="text" id="searchInput" onkeyup="searchProduct()">
+        </div>
+        <div id="loading" style="display: none;">
+            <h4>Loading products...</h4>
+        </div>
+        <div class="products" id="product-container">
+            
+        </div> 
+    </div>
+    <script src="js/main.js"></script>
+
+    
+</body>
+</html>
